@@ -1,0 +1,10 @@
+C:\Users\Enzo\Git\server-switcher\bin\Release\Kawata Server Switcher.exe.config
+C:\Users\Enzo\Git\server-switcher\bin\Release\Kawata Server Switcher.exe
+C:\Users\Enzo\Git\server-switcher\bin\Release\Kawata Server Switcher.pdb
+C:\Users\Enzo\Git\server-switcher\obj\Release\AkatsukiServerSwitcher.ChangelogForm.resources
+C:\Users\Enzo\Git\server-switcher\obj\Release\AkatsukiServerSwitcher.MainForm.resources
+C:\Users\Enzo\Git\server-switcher\obj\Release\ass.Properties.Resources.resources
+C:\Users\Enzo\Git\server-switcher\obj\Release\RippleServerSwitcher.csproj.GenerateResource.cache
+C:\Users\Enzo\Git\server-switcher\obj\Release\RippleServerSwitcher.csproj.CoreCompileInputs.cache
+C:\Users\Enzo\Git\server-switcher\obj\Release\Kawata Server Switcher.exe
+C:\Users\Enzo\Git\server-switcher\obj\Release\Kawata Server Switcher.pdb

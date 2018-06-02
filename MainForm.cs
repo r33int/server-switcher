@@ -22,14 +22,14 @@ namespace AkatsukiServerSwitcher
     public partial class MainForm : Form
     {
         public bool Akatsuki = false;
-        public string AkatsukiIP = "212.47.237.21";  // memesys
+        public string AkatsukiIP = "51.15.228.68";  // kawata
         public string mirrorIP = "51.15.222.176";  // zxq
         public bool testConnection = false;
 
         public int currentVersion = 140;     // Increment this and update changelog before compiling a new update
         public int latestChangelog = 0;
 
-        public string settingsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Akatsuki Server Switcher";
+        public string settingsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Kawata Server Switcher";
         public string hostsPath = Environment.GetEnvironmentVariable("windir") + "\\system32\\drivers\\etc\\hosts";
 
         public MainForm()
@@ -42,26 +42,26 @@ namespace AkatsukiServerSwitcher
 
             // Create tooltips
             ToolTip OnOffTooltip = new ToolTip();
-            OnOffTooltip.SetToolTip(this.switchButton, "Switch between osu! and Akatsuki Servers");
+            OnOffTooltip.SetToolTip(this.switchButton, "Switch between osu! and Kawata Servers");
             ToolTip LocalRipwotTooltip = new ToolTip();
             LocalRipwotTooltip.SetToolTip(this.updateIPButton, "Get the right server IP address directly from the server.");
             ToolTip InstallCertificateTooltip = new ToolTip();
-            InstallCertificateTooltip.SetToolTip(this.installCertificateButton, "Install/Remove HTTPS certificate.\nYou must have install the certificate in order to connect\nto Akatsuki with stable/beta/cutting edge.\nYou don't need the certificate with fallback.");
+            InstallCertificateTooltip.SetToolTip(this.installCertificateButton, "Install/Remove HTTPS certificate.\nYou must have install the certificate in order to connect\nto Kawata with stable/beta/cutting edge.\nYou don't need the certificate with fallback.");
 
             // Create settings directory (if it doesn't exists)
             Directory.CreateDirectory(settingsPath);
 
-            // Check if Akatsuki.txt exists and if not create a default one
-            if (!File.Exists(settingsPath + "\\Akatsuki.txt"))
+            // Check if Kawata.txt exists and if not create a default one
+            if (!File.Exists(settingsPath + "\\Kawata.txt"))
             {
-                File.AppendAllText(settingsPath + "\\Akatsuki.txt", AkatsukiIP + Environment.NewLine);
-                File.AppendAllText(settingsPath + "\\Akatsuki.txt", mirrorIP + Environment.NewLine);
-                File.AppendAllText(settingsPath + "\\Akatsuki.txt", "true");
-                File.AppendAllText(settingsPath + "\\Akatsuki.txt", Convert.ToString(currentVersion-1)+Environment.NewLine);
+                File.AppendAllText(settingsPath + "\\Kawata.txt", AkatsukiIP + Environment.NewLine);
+                File.AppendAllText(settingsPath + "\\Kawata.txt", mirrorIP + Environment.NewLine);
+                File.AppendAllText(settingsPath + "\\Kawata.txt", "true");
+                File.AppendAllText(settingsPath + "\\Kawata.txt", Convert.ToString(currentVersion-1)+Environment.NewLine);
             }
 
-            // Read Akatsuki.txt
-            string[] AkatsukiTxt = File.ReadAllLines(settingsPath + "\\Akatsuki.txt");
+            // Read Kawata.txt
+            string[] AkatsukiTxt = File.ReadAllLines(settingsPath + "\\Kawata.txt");
 
             // If there are 4 lines, it's not corrupter or memes
             if (AkatsukiTxt.Length == 4)
@@ -117,11 +117,11 @@ namespace AkatsukiServerSwitcher
 
         public void saveSettings()
         {
-            // Save settings to Akatsuki.txt
-            File.WriteAllText(settingsPath + "\\Akatsuki.txt", AkatsukiIP + Environment.NewLine);
-            File.AppendAllText(settingsPath + "\\Akatsuki.txt", mirrorIP + Environment.NewLine);
-            File.AppendAllText(settingsPath + "\\Akatsuki.txt", Convert.ToString(testConnection) + Environment.NewLine);
-            File.AppendAllText(settingsPath + "\\Akatsuki.txt", Convert.ToString(latestChangelog));
+            // Save settings to Kawata.txt
+            File.WriteAllText(settingsPath + "\\Kawata.txt", AkatsukiIP + Environment.NewLine);
+            File.AppendAllText(settingsPath + "\\Kawata.txt", mirrorIP + Environment.NewLine);
+            File.AppendAllText(settingsPath + "\\Kawata.txt", Convert.ToString(testConnection) + Environment.NewLine);
+            File.AppendAllText(settingsPath + "\\Kawata.txt", Convert.ToString(latestChangelog));
         }
 
         public bool findServer()
@@ -211,13 +211,13 @@ namespace AkatsukiServerSwitcher
                 }
                 else
                 {
-                    statusLabel.Text = "Invalid Akatsuki/Mirror IP address";
+                    statusLabel.Text = "Invalid Kawata/Mirror IP address";
                     return false;
                 }
             }
             else
             {
-                statusLabel.Text = "Invalid Akatsuki/Mirror IP address";
+                statusLabel.Text = "Invalid Kawata/Mirror IP address";
                 return false;
             }
         }
@@ -225,7 +225,7 @@ namespace AkatsukiServerSwitcher
         public void updateStatusLabel()
         {
             // Update statusLabel based on Akatsuki variable
-            statusLabel.Text = Akatsuki ? "You are playing on Akatsuki." + Environment.NewLine+IPTextBox.Text+" - "+MirrorIPTextBox.Text : "You are playing on Osu! server.";
+            statusLabel.Text = Akatsuki ? "You are playing on Kawata." + Environment.NewLine+IPTextBox.Text+" - "+MirrorIPTextBox.Text : "You are playing on osu! official server.";
             // Ayy k maron sn pigor xd
             updateJennaWarning();
         }
@@ -300,14 +300,14 @@ namespace AkatsukiServerSwitcher
                 }
 
                 if (s == "ok")
-                    updateStatusLabel();    // This changes statuslabel.text to "You are playing on Akatsuki"
+                    updateStatusLabel();    // This changes statuslabel.text to "You are playing on Kawata"
                 else
-                    statusLabel.Text = "Error while connecting Akatsuki.";
+                    statusLabel.Text = "Error while connecting Kawata.";
             }
             catch
             {
                 // 4xx / 5xx error
-                statusLabel.Text = "Error while connecting Akatsuki.";
+                statusLabel.Text = "Error while connecting Kawata.";
             }
         }
 
@@ -363,9 +363,9 @@ namespace AkatsukiServerSwitcher
         {
             try
             {
-                // Get server ip from ip.Akatsuki.moe
+                // Get server ip from ip.kawata.pw
                 WebClient client = new WebClient();
-                string[] remoteIPs = client.DownloadString("http://old.osu.akatsuki.pw/ips.txt").TrimEnd('\r', '\n').Split('\n');
+                string[] remoteIPs = client.DownloadString("http://old.kawata.pw/ips.txt").TrimEnd('\r', '\n').Split('\n');
 
                 // Akatsuki IP
                 if (AkatsukiIP != remoteIPs[0])
@@ -390,34 +390,9 @@ namespace AkatsukiServerSwitcher
         }
 
 
-        void updateServerIPrelax()
+        void goToWebsite()
         {
-            try
-            {
-                // Get server ip from ip.Akatsuki.moe
-                WebClient client = new WebClient();
-                string[] remoteIPs = client.DownloadString("http://old.relax.akatsuki.pw/ips.txt").TrimEnd('\r', '\n').Split('\n');
-
-                // Akatsuki IP
-                if (AkatsukiIP != remoteIPs[0])
-                {
-                    IPTextBox.Text = remoteIPs[0];
-                    if (updateServer())
-                        updateStatusLabel();
-                }
-
-                // Mirror IP
-                if (mirrorIP != remoteIPs[1])
-                {
-                    MirrorIPTextBox.Text = remoteIPs[1];
-                    if (updateServer())
-                        updateStatusLabel();
-                }
-            }
-            catch
-            {
-                // Error
-            }
+            System.Diagnostics.Process.Start("https://kawata.pw");
         }
 
         void checkOldServerIP()
@@ -426,13 +401,13 @@ namespace AkatsukiServerSwitcher
             {
                 // Get old ip from ip.Akatsuki.moe
                 WebClient client = new WebClient();
-                var oldIPs = client.DownloadString("http://old.relax.Akatsuki.win/oldips.txt").Split('\n');
+                var oldIPs = client.DownloadString("http://old.kawata.pw/oldips.txt").Split('\n');
                 int l = oldIPs.Length;
                 for (int i=0; i< l; i++)
                 {
                     if (IPTextBox.Text == oldIPs[i] || MirrorIPTextBox.Text == oldIPs[i])
                     {
-                        MessageBox.Show("You're ips might be out of date just check by pressing the button of the server you want to play on :)");
+                        MessageBox.Show("Your IPs might be out of date. Just click the Update IP button to fix this! :)");
                         break;
                     }
                 }
@@ -473,10 +448,11 @@ namespace AkatsukiServerSwitcher
         {
             bool installed = __installed;
             if (check)
+
             {
                 X509Store store = new X509Store(StoreName.Root, StoreLocation.CurrentUser);
                 store.Open(OpenFlags.ReadWrite);
-                X509Certificate2Collection certs = store.Certificates.Find(X509FindType.FindBySubjectName, "TheHangout", true);
+                X509Certificate2Collection certs = store.Certificates.Find(X509FindType.FindBySubjectName, "Hangout CA", true);
                 installed = certs.Count > 0 ? true : false;
             }
             if (installed)
@@ -496,12 +472,12 @@ namespace AkatsukiServerSwitcher
             // Check and install certificate
             X509Store store = new X509Store(StoreName.Root, StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadWrite);
-            X509Certificate2Collection certs = store.Certificates.Find(X509FindType.FindBySubjectName, "TheHangout", true);
+            X509Certificate2Collection certs = store.Certificates.Find(X509FindType.FindBySubjectName, "Hangout CA", true);
 
             if (certs.Count > 0)
             {
                 // Certificate already installed, remove it
-                DialogResult yn = MessageBox.Show("Are you sure you want to remove Akatsuki's HTTPS certificate?\nThere's no need to remove it, you'll be able to browse both Akatsuki and osu!\nwithout any problem even if the certificate is installed and the switcher is off.", "Akatsuki certificate installer", MessageBoxButtons.YesNo);
+                DialogResult yn = MessageBox.Show("Are you sure you want to remove Kawata's HTTPS certificate?\n re's no need to remove it, you'll be able to browse both Kawata and osu!\nwithout any problem even if the certificate is installed and the switcher is off.", "Kawata certificate installer", MessageBoxButtons.YesNo);
                 if (yn == DialogResult.No)
                 {
                     store.Close();
@@ -513,11 +489,11 @@ namespace AkatsukiServerSwitcher
                         store.Remove(certs[0]);
 
                     updateCertificateButton(false, false);
-                    MessageBox.Show("Certificate removed!", "Akatsuki certificate installer");
+                    MessageBox.Show("Certificate removed!", "Kawata certificate installer");
                 }
                 catch
                 {
-                    MessageBox.Show("You can't remove me hahahah.", "Akatsuki certificate installer");
+                    MessageBox.Show("You can't remove me hahahah.", "Kawata certificate installer");
                 }
             }
             else
@@ -526,7 +502,7 @@ namespace AkatsukiServerSwitcher
                 try
                 {
                     // Save the certificate in settingsPath temporary
-                    string certFilePath = settingsPath + "\\cmyui.crt";
+                    string certFilePath = settingsPath + "\\temp.crt";
                     File.WriteAllBytes(certFilePath, Resources.certificate);
 
                     // Get all certficates
@@ -538,14 +514,14 @@ namespace AkatsukiServerSwitcher
                         store.Add(cert);
 
                     updateCertificateButton(true, false);
-                    MessageBox.Show("Certificate installed! Try connecting to Akatsuki with beta/stable/cutting edge", "Akatsuki certificate installer");
+                    MessageBox.Show("Certificate installed! Try connecting to Kawata with beta/stable/cutting edge", "Kawata certificate installer");
 
                     // Delete temp certificate file
                     File.Delete(certFilePath);
                 }
                 catch
                 {
-                    MessageBox.Show("Error while installing certificate.", "Akatsuki certificate installer");
+                    MessageBox.Show("Error while installing certificate.", "Kawata certificate installer");
                 }
             }
 
@@ -554,7 +530,7 @@ namespace AkatsukiServerSwitcher
 
         private void localButton_Click(object sender, EventArgs e)
         {
-            updateServerIPrelax();
+            goToWebsite();
         }
 
         private void statusLabel_Click(object sender, EventArgs e)

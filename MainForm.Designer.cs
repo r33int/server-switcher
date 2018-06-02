@@ -150,7 +150,7 @@ namespace AkatsukiServerSwitcher
             this.genuineTheme1.Size = new System.Drawing.Size(255, 202);
             this.genuineTheme1.SmartBounds = true;
             this.genuineTheme1.TabIndex = 0;
-            this.genuineTheme1.Text = "Akatsuki Server Switcher";
+            this.genuineTheme1.Text = "Kawata Server Switcher";
             this.genuineTheme1.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.genuineTheme1.Click += new System.EventHandler(this.genuineTheme1_Click);
             // 
@@ -186,7 +186,7 @@ namespace AkatsukiServerSwitcher
             this.localButton.NoRounding = false;
             this.localButton.Size = new System.Drawing.Size(116, 25);
             this.localButton.TabIndex = 9;
-            this.localButton.Text = "Relax Server";
+            this.localButton.Text = "Website";
             this.localButton.Transparent = false;
             this.localButton.Click += new System.EventHandler(this.localButton_Click);
             // 
@@ -270,9 +270,9 @@ namespace AkatsukiServerSwitcher
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(2, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Akatsuki IP:";
+            this.label1.Text = "Kawata IP:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // IPTextBox
@@ -318,7 +318,7 @@ namespace AkatsukiServerSwitcher
             this.updateIPButton.NoRounding = false;
             this.updateIPButton.Size = new System.Drawing.Size(110, 25);
             this.updateIPButton.TabIndex = 3;
-            this.updateIPButton.Text = "Normal Server";
+            this.updateIPButton.Text = "Update IP";
             this.updateIPButton.Transparent = false;
             this.updateIPButton.Click += new System.EventHandler(this.updateIPButton_Click);
             // 
