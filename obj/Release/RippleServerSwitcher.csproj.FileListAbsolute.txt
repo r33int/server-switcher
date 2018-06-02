@@ -8,3 +8,4 @@ C:\Users\Enzo\Git\server-switcher\obj\Release\RippleServerSwitcher.csproj.Genera
 C:\Users\Enzo\Git\server-switcher\obj\Release\RippleServerSwitcher.csproj.CoreCompileInputs.cache
 C:\Users\Enzo\Git\server-switcher\obj\Release\Kawata Server Switcher.exe
 C:\Users\Enzo\Git\server-switcher\obj\Release\Kawata Server Switcher.pdb
+C:\Users\Enzo\Git\server-switcher\obj\Release\RippleServerSwitcher.csprojAssemblyReference.cache

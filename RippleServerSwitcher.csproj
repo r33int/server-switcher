@@ -131,8 +131,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\certificate.crt" />
-    <None Include="Resources\kawatapkcs.p7b" />
-    <None Include="Resources\pkcs.p7b" />
     <None Include="Resources\ripplepkcs.p7b" />
     <None Include="Resources\temp.crt" />
     <None Include="RippleServerSwitcher_TemporaryKey.pfx" />

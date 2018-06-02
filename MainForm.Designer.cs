@@ -426,7 +426,7 @@ namespace AkatsukiServerSwitcher
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(213, 78);
             this.label4.TabIndex = 2;
-            this.label4.Text = "You are playing on a local server!\r\nThat\'s only for Akatsuki developers!\r\nYou won" +
+            this.label4.Text = "You are playing on a local server!\r\nThat\'s only for Kawata developers!\r\nYou won" +
     "\'t be able to connect\r\nif you leave the switcher in the\r\ncurrent state. Please p" +
     "ress the\r\nLocal/Remote button.";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,7 +440,7 @@ namespace AkatsukiServerSwitcher
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "akatsuKI";
+            this.Text = "Kawata Server Switcher";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.genuineTheme1.ResumeLayout(false);
